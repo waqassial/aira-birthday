@@ -349,7 +349,7 @@ const CONFIG = {
   venue: "Downhill Resort",
   address: "",                      // e.g. "Street, Town" — shown under the venue and added to calendar
   mapUrl: "https://maps.app.goo.gl/3bMeMP1TtJcHn6WF8",                     // exact https:// Google Maps link; "Get Directions" stays hidden until set
-  rsvpWhatsApp: "",                 // host number in international format, e.g. "+92 300 1234567"
+  rsvpWhatsApp: "+92 308 6012258",               // host number in international format, e.g. "+92 300 1234567"
   rsvpDeadline: "",                 // YYYY-MM-DD, e.g. "2026-12-08"
   photo: "aira.jpg",                // image file next to index.html, URL, or ""  for the illustrated frame
   shareUrl: "https://waqassial.github.io/aira-birthday/",// the public link guests should receive (https://...)
@@ -555,7 +555,7 @@ $("copyBtn").addEventListener("click", async ()=>{
 });
 
 /* ---- RSVP ---- */
-const dlg = $("rsvp"), wa = String(C.rsvpWhatsApp||"").replace(/\D/g,"");
+const dlg = $("rsvp"), wa = String(C.rsvpWhatsApp||"").replace(/\D/g,"").replace(/^00/,"");
 let msg = "";
 $("rsvpBtn").addEventListener("click", ()=>{ $("step1").hidden=false; $("step2").hidden=true; $("err").textContent=""; dlg.showModal(); setTimeout(()=>$("gName").focus(),30); });
 $("rsvpClose").addEventListener("click", ()=>dlg.close());
